@@ -61,7 +61,7 @@ router.post('/sign/:peticaoId', async(req, res)=>{
   }
 });
 
-router.post('/:peticaoId', async(req, res)=>{
+router.get('/:peticaoId', async(req, res)=>{
   const peticaoId = req.params.peticaoId;
   try{
     const peticao = await Peticao.findById(peticaoId);
