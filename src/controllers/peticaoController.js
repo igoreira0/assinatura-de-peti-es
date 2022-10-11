@@ -61,6 +61,16 @@ router.post('/sign/:peticaoId', async(req, res)=>{
   }
 });
 
+router.post('/:peticaoId', async(req, res)=>{
+  const peticaoId = req.params.peticaoId;
+  try{
+    const peticao = await Peticao.findById(peticaoId);
+    return res.send(peticao);
+  }catch(e){
+    return res.send({status: `Error trying update ${peticaoId}`});
+  }
+});
+
 router.delete('/delete/:peticaoId', async (req,res)=>{
   const peticaoId = req.params.peticaoId;
   try{
