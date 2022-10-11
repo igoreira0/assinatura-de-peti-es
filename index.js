@@ -8,6 +8,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 require('./src/controllers/authController')(app);
 require('./src/controllers/peticaoController')(app);
+require('./src/controllers/healthController')(app);
+
 
 
 app.listen(3000);
