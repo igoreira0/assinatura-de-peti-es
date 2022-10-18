@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get('/liveness', async(_, res)=>{
+router.get('/liveness', (_, res)=>{
     res.send({status: 'ok'});
 });
 

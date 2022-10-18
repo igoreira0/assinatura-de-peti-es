@@ -8,7 +8,6 @@ const Peticao = new mongoose.Schema({
   signed: [
     {
         type: String,
-        unique: true
     }
   ],
   createdAt: {

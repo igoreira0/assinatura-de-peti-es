@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 
 const app = express();
-
+const port = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -11,5 +11,5 @@ require('./src/controllers/peticaoController')(app);
 require('./src/controllers/healthController')(app);
 
 
-
-app.listen(3000);
+console.log(`listening http://localhost:${port}`)
+app.listen(port);
