@@ -5,6 +5,17 @@ const Peticao = require('../models/peticao');
 
 const router = express.Router();
 
+router.get('/', async(req, res)=>{
+  try{
+    console.log(`getting all peticoes`);
+    const peticao = await Peticao.find();
+    return res.send(peticao);
+  }catch(e){
+    console.log(`error getting peticao id`);
+    return res.send({status: `Error trying update }`});
+  }
+});
+
 router.get('/:peticaoId', async(req, res)=>{
   const peticaoId = req.params.peticaoId;
   try{
