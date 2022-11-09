@@ -46,7 +46,7 @@ router.post('/newpeticao', async (req, res)=>{
   }
 });
 
-router.put('/updatpeticao', async(req, res)=>{
+router.put('/updatepeticao', async(req, res)=>{
   const id = req.body._id;
   try{
     console.log(`updating peticao ${id}`);
