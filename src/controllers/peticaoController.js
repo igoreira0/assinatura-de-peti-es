@@ -82,7 +82,7 @@ router.post('/sign/:peticaoId', async(req, res)=>{
       peticao.signed.push(String(req.userId));
     else
      return res.status(302).send({error: `your vote for ${peticaoId} already exists`});
-    await Peticao.updateOne(peticao);
+    await Peticao.updateOne({_id: peticaoId}, peticao);
     return res.send({status: `${peticaoId} has been signed`});
   }catch(e){
     console.log(`error signing peticao ${peticaoId}`);
